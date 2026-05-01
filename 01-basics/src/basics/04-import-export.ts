@@ -1,13 +1,17 @@
 
-import heroes, { owners } from "./../data/heroes";
+import heroes, { type Hero, type Owner } from "./../data/heroes";
 
-const getHero = (id: number) => heroes.find(hero => hero.id === id);
+const getHero = (id: number): Hero | undefined => {
+    return heroes.find(hero => hero.id === id);
+}
 
-console.log(getHero(10)?.name);
+console.log(getHero(5)?.id);
 
-const getHeroesByOwner = (owner: "DC" | "Marvel") => heroes.filter(hero => hero.owner === owner);
+const getHeroesByOwner = (owner: Owner): Hero[] => {
+    return heroes.filter(hero => hero.owner === owner);
+}
 
-console.log(getHeroesByOwner("DC"));
+console.log(getHeroesByOwner('DC'));
 
 export {
     getHero,

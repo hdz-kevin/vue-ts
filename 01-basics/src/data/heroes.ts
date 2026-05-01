@@ -1,29 +1,36 @@
+export type Owner = 'DC' | 'Marvel';
 
-const heroes = [
+export interface Hero {
+    id: number,
+    name: string,
+    owner: Owner,
+}
+
+const heroes: Hero[] = [
     {
         id: 1,
         name: 'Batman',
-        owner: 'DC'
+        owner: 'DC',
     },
     {
         id: 2,
         name: 'Spiderman',
-        owner: 'Marvel'
+        owner: 'Marvel',
     },
     {
         id: 3,
         name: 'Superman',
-        owner: 'DC'
+        owner: 'DC',
     },
     {
         id: 4,
         name: 'Flash',
-        owner: 'DC'
+        owner: 'DC',
     },
     {
         id: 5,
         name: 'Wolverine',
-        owner: 'Marvel'
+        owner: 'Marvel',
     },
 ];
 
