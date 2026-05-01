@@ -20,4 +20,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 // import "./basics/01-variables";
 // import "./basics/02-objects";
-import "./basics/03-destructuring";
+// import "./basics/03-destructuring";
+import "./basics/04-import-export"
