@@ -15,10 +15,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
   </div>
 </section>
-
 `
 
 // import "./basics/01-variables";
 // import "./basics/02-objects";
 // import "./basics/03-destructuring";
-import "./basics/04-import-export"
+// import "./basics/04-import-export"
+import "./basics/05-promises";
