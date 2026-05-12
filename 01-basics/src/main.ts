@@ -22,4 +22,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 // import "./basics/03-destructuring";
 // import "./basics/04-import-export"
 // import "./basics/05-promises";
-import "./basics/06-fetch-api"
+// import "./basics/06-fetch-api";
+import "./basics/07-axios";
