@@ -20,9 +20,28 @@
         // Crear la instancia de la aplicación
         const app = createApp({
             template: `
-                <h1>Hello World</h1>
-                <p>Desde app.js</p> 
+                <h1>{{ message }}</h1>
+                <p>- {{ author }}</p> 
             `,
+
+            // La función setup se ejecuta tan pronto el componente se monta.
+            setup() {
+                // Usamos ref() para hacer que la variable sea reactiva.
+                const message = ref("Hola, soy Goku!");
+                const author = ref("Kakaroto");
+
+                setTimeout(() => {
+                    // Para modificar una variable reactiva, debemos usar su propiedad .value
+                    message.value = "Hola, soy Batman!";
+                    author.value = "Bruce Wayne";
+                }, 2000);
+
+                // Las propiedades que se retornan en setup son expuestas al template.
+                return {
+                    message,
+                    author,
+                }
+            }
         });
 
         // Montar la aplicación en el elemento con id="app"
