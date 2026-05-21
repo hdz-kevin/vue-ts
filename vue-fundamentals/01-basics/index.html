@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World with Vue!!</title>
+</head>
+<body>
+    <!-- In this div is where the Vue application will be mounted -->
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <p>- {{ author }}</p>
+
+        <!-- Capture event and execute a function -->
+        <button v-on:click="updateQuote">Update Quote</button>
+    </div>
+
+
+    <!-- Load Vue from the CDN (Content Delivery Network) -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        // Destructure the functions from the global Vue object
+        const { createApp, ref } = Vue;
+
+        // Create the application instance
+        const app = createApp({
+            // The setup function is executed as soon as the component is mounted.
+            setup() {
+                // We use ref() to make the variable reactive.
+                const message = ref("Hi, I'm Goku!");
+                const author = ref("Kakaroto");
+
+                const updateQuote = () => {
+                    // To modify a reactive variable, we must use its .value property
+                    message.value = "Hi, I'm Batman!";
+                    author.value = "Bruce Wayne";
+                };
+
+                // The properties that are returned in setup are exposed to the template.
+                return {
+                    message,
+                    author,
+                    updateQuote,
+                }
+            }
+        });
+
+        // Mount the application to the element with id="app"
+        app.mount('#app');
+    </script>
+</body>
+</html>
